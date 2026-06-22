@@ -4,30 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="000d3186-deba-40cc-ad21-66f2c0e7f3b5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/horse-booking.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/api/bookings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/database/database.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/database/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/schemas/booking.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/services/booking_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/services/google_sheets.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/app/services/telegram_service.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/telegram_bot/bot.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/telegram_bot/handlers.py" afterDir="false" />
-    </list>
+    <list default="true" id="000d3186-deba-40cc-ad21-66f2c0e7f3b5" name="Changes" comment="created all files" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +21,12 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/m1st1xx/horse-booking.git",
+    "accountId": "0442a6aa-8333-4c8f-b708-304102fe7a01"
+  }
+}]]></component>
   <component name="ProjectColorInfo"><![CDATA[{
   "associatedIndex": 7
 }]]></component>
@@ -80,6 +63,19 @@
       <option name="presentableId" value="Default" />
       <updated>1782160888374</updated>
     </task>
+    <task id="LOCAL-00001" summary="created all files">
+      <option name="closed" value="true" />
+      <created>1782165308395</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1782165308395</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="created all files" />
+    <option name="LAST_COMMIT_MESSAGE" value="created all files" />
   </component>
 </project>
