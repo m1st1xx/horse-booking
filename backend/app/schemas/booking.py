@@ -16,6 +16,8 @@ class BookingCreate(BaseModel):
     duration: int
 
     booking_time: datetime
+    duration: int
+    booking_time: datetime
 
 
 class BookingResponse(BaseModel):
