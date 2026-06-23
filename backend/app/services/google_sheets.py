@@ -32,6 +32,28 @@ def add_booking_row(booking):
             booking.people_count,
             str(booking.booking_time),
             str(booking.end_time),
-            booking.duration
+            booking.duration,
+            booking.status
         ]
     )
+def update_booking_status(
+    booking_id,
+    status
+):
+
+    records = sheet.get_all_records()
+
+    for index, row in enumerate(
+        records,
+        start=2
+    ):
+
+        if row["ID"] == booking_id:
+
+            sheet.update_cell(
+                index,
+                9,
+                status
+            )
+
+            break

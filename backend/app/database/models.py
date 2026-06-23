@@ -45,6 +45,12 @@ class Booking(Base):
         DateTime,
         nullable=False
     )
+    status = Column(
+        String,
+        default="pending",
+        nullable=False
+    )
+
 class Instructor(Base):
 
     __tablename__ = "instructors"
