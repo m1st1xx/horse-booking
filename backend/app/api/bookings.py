@@ -12,6 +12,8 @@ from datetime import datetime
 from datetime import timedelta
 from backend.app.database.models import Instructor
 from backend.app.services.google_sheets import add_booking_row
+import asyncio
+from backend.app.services.telegram_service import (send_booking_notification)
 
 router = APIRouter()
 
@@ -57,6 +59,9 @@ def create_booking(
 
     db.refresh(new_booking)
     add_booking_row(new_booking)
+    asyncio.create_task(
+        send_booking_notification(new_booking)
+    )
     return new_booking
 
 @router.get(
