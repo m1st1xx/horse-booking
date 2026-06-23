@@ -41,3 +41,7 @@ class Booking(Base):
         DateTime,
         nullable=False
     )
+    end_time = Column(
+        DateTime,
+        nullable=False
+    )
