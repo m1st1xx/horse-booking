@@ -27,11 +27,6 @@ services:
     depends_on:
       - db
 
-  frontend:
-
-    build: ./frontend
-
-    restart: always
 
   nginx:
 
@@ -47,7 +42,6 @@ services:
 
     depends_on:
       - backend
-      - frontend
 
 volumes:
   postgres_data:

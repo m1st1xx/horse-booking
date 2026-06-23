@@ -50,6 +50,10 @@ class Booking(Base):
         default="pending",
         nullable=False
     )
+    sheet_row = Column(
+        Integer,
+        nullable=True
+    )
 
 class Instructor(Base):
 

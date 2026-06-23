@@ -50,7 +50,8 @@ def create_booking(
         people_count=booking.people_count,
         duration=booking.duration,
         booking_time=booking.booking_time,
-        end_time=end_time
+        end_time=end_time,
+        status="pending",
     )
 
     db.add(new_booking)
@@ -113,3 +114,50 @@ def get_instructors(
         db.query(Instructor)
         .all()
     )
+
+@router.patch("/{booking_id}/confirm")
+def confirm_booking(
+    booking_id: int,
+    db: Session = Depends(get_db)
+):
+    booking = db.query(Booking).filter(
+        Booking.id == booking_id
+    ).first()
+
+    if not booking:
+        raise HTTPException(
+            status_code=404,
+            detail="Booking not found"
+        )
+
+    booking.status = "confirmed"
+
+    db.commit()
+
+    return {
+        "message": "Booking confirmed"
+    }
+
+
+@router.patch("/{booking_id}/cancel")
+def cancel_booking(
+    booking_id: int,
+    db: Session = Depends(get_db)
+):
+    booking = db.query(Booking).filter(
+        Booking.id == booking_id
+    ).first()
+
+    if not booking:
+        raise HTTPException(
+            status_code=404,
+            detail="Booking not found"
+        )
+
+    booking.status = "cancelled"
+
+    db.commit()
+
+    return {
+        "message": "Booking cancelled"
+    }
