@@ -1,10 +1,8 @@
 from datetime import timedelta
-
+from backend.app.database.models import Instructor
 from backend.app.database.models import Booking
 
 
-MALE_CAPACITY = 6
-FEMALE_CAPACITY = 9
 
 
 def can_book(
@@ -14,8 +12,12 @@ def can_book(
     start_time,
     duration
 ):
-
+    capacity = get_capacity(
+        db,
+        gender
+    )
     end_time = start_time + timedelta(hours=duration)
+
 
     overlapping = (
         db.query(Booking)
@@ -38,13 +40,29 @@ def can_book(
             female_people += booking.people_count
 
     if gender == "male":
-
         return (
-            male_people + people_count
-            <= MALE_CAPACITY
+                male_people + people_count
+                <= capacity
         )
 
     return (
-        female_people + people_count
-        <= FEMALE_CAPACITY
+            female_people + people_count
+            <= capacity
     )
+
+
+def get_capacity(
+    db,
+    gender
+):
+
+    instructors_count = (
+        db.query(Instructor)
+        .filter(
+            Instructor.gender == gender,
+            Instructor.active == True
+        )
+        .count()
+    )
+
+    return instructors_count * 3

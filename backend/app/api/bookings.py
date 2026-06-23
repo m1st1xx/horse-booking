@@ -7,6 +7,11 @@ from backend.app.schemas.booking import (BookingCreate,BookingResponse)
 from datetime import timedelta
 from fastapi import HTTPException
 from backend.app.services.booking_service import can_book
+from datetime import date
+from datetime import datetime
+from datetime import timedelta
+
+
 
 router = APIRouter()
 
@@ -63,3 +68,34 @@ def get_bookings(
 ):
 
     return db.query(Booking).all()
+
+@router.get("/available-slots")
+def available_slots(
+    selected_date: date,
+    gender: str,
+    people_count: int,
+    duration: int,
+    db: Session = Depends(get_db)
+):
+
+    slots = []
+
+    for hour in range(10, 20):
+
+        start_time = datetime.combine(
+            selected_date,
+            datetime.min.time()
+        ).replace(hour=hour)
+
+        if can_book(
+            db=db,
+            gender=gender,
+            people_count=people_count,
+            start_time=start_time,
+            duration=duration
+        ):
+            slots.append(
+                start_time.strftime("%H:%M")
+            )
+
+    return slots
