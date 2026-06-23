@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="000d3186-deba-40cc-ad21-66f2c0e7f3b5" name="Changes" comment="edited POST router in app/api/booking.py">
+    <list default="true" id="000d3186-deba-40cc-ad21-66f2c0e7f3b5" name="Changes" comment="added new field in db, edited modules.py&#10;added new GET in api/bookings.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/.env" beforeDir="false" afterPath="$PROJECT_DIR$/backend/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/api/bookings.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/api/bookings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/database/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/database/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/app/services/booking_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/services/booking_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782232929320</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="added new field in db, edited modules.py&#10;added new GET in api/bookings.py">
+      <option name="closed" value="true" />
+      <created>1782235659513</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1782235659513</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -134,6 +141,7 @@
     <MESSAGE value="added new module in database dir" />
     <MESSAGE value="added checking in booking_service.py&#10;edited class in booking.py" />
     <MESSAGE value="edited POST router in app/api/booking.py" />
-    <option name="LAST_COMMIT_MESSAGE" value="edited POST router in app/api/booking.py" />
+    <MESSAGE value="added new field in db, edited modules.py&#10;added new GET in api/bookings.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="added new field in db, edited modules.py&#10;added new GET in api/bookings.py" />
   </component>
 </project>

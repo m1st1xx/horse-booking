@@ -8,3 +8,5 @@ python-dotenv
 
 pydantic
 pydantic-settings
+gspread
+google-auth

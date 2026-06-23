@@ -10,8 +10,7 @@ from backend.app.services.booking_service import can_book
 from datetime import date
 from datetime import datetime
 from datetime import timedelta
-
-
+from backend.app.database.models import Instructor
 
 router = APIRouter()
 
@@ -99,3 +98,12 @@ def available_slots(
             )
 
     return slots
+@router.get("/instructors")
+def get_instructors(
+    db: Session = Depends(get_db)
+):
+
+    return (
+        db.query(Instructor)
+        .all()
+    )
