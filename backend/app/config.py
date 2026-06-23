@@ -11,6 +11,9 @@ class Settings(BaseSettings):
     DB_USER: str
     DB_PASSWORD: str
 
+    BOT_TOKEN: str
+    MANAGER_CHAT_ID: int
+
     class Config:
         env_file = "backend/.env"
 

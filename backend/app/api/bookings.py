@@ -11,6 +11,7 @@ from datetime import date
 from datetime import datetime
 from datetime import timedelta
 from backend.app.database.models import Instructor
+from backend.app.services.google_sheets import add_booking_row
 
 router = APIRouter()
 
@@ -55,7 +56,7 @@ def create_booking(
     db.commit()
 
     db.refresh(new_booking)
-
+    add_booking_row(new_booking)
     return new_booking
 
 @router.get(
