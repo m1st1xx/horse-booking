@@ -3,8 +3,8 @@ from datetime import datetime
 from pydantic import BaseModel
 
 
-class BookingCreate(BaseModel):
 
+class BookingCreate(BaseModel):
     client_name: str
 
     phone: str
@@ -15,8 +15,6 @@ class BookingCreate(BaseModel):
 
     duration: int
 
-    booking_time: datetime
-    duration: int
     booking_time: datetime
 
 
@@ -35,6 +33,8 @@ class BookingResponse(BaseModel):
     duration: int
 
     booking_time: datetime
+
+    end_time: datetime
 
     class Config:
         from_attributes = True
