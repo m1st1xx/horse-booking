@@ -1,12 +1,22 @@
+from datetime import timedelta
+
 from backend.app.database.models import Booking
 
 
-def check_capacity(
+MALE_CAPACITY = 6
+FEMALE_CAPACITY = 9
+
+
+def can_book(
     db,
+    gender: str,
+    people_count: int,
     start_time,
-    end_time,
-    people_count
+    duration
 ):
+
+    end_time = start_time + timedelta(hours=duration)
+
     overlapping = (
         db.query(Booking)
         .filter(
@@ -15,9 +25,26 @@ def check_capacity(
         )
         .all()
     )
-    current_people = sum(
-        booking.people_count
-        for booking in overlapping
+
+    male_people = 0
+    female_people = 0
+
+    for booking in overlapping:
+
+        if booking.gender == "male":
+            male_people += booking.people_count
+
+        else:
+            female_people += booking.people_count
+
+    if gender == "male":
+
+        return (
+            male_people + people_count
+            <= MALE_CAPACITY
+        )
+
+    return (
+        female_people + people_count
+        <= FEMALE_CAPACITY
     )
-    if current_people + people_count > 15:
-        return False
