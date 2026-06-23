@@ -1,0 +1,53 @@
+version: "3.9"
+
+services:
+
+  db:
+    image: postgres:16
+
+    restart: always
+
+    environment:
+      POSTGRES_DB: horse_booking
+      POSTGRES_USER: horse_user
+      POSTGRES_PASSWORD: horse_password
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+
+    build: ./backend
+
+    restart: always
+
+    env_file:
+      - .env
+
+    depends_on:
+      - db
+
+  frontend:
+
+    build: ./frontend
+
+    restart: always
+
+  nginx:
+
+    image: nginx:alpine
+
+    restart: always
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+
+    depends_on:
+      - backend
+      - frontend
+
+volumes:
+  postgres_data:
