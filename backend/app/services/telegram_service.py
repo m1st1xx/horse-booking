@@ -1,7 +1,10 @@
 from aiogram import Bot
 import asyncio
 from backend.app.config import settings
-
+from aiogram.types import (
+    InlineKeyboardMarkup,
+    InlineKeyboardButton
+)
 
 bot = Bot(
     token=settings.BOT_TOKEN
@@ -30,5 +33,30 @@ async def send_booking_notification(booking):
 
     await bot.send_message(
         chat_id=settings.MANAGER_CHAT_ID,
-        text=text
+        text=text,
+        reply_markup=booking_keyboard(
+            booking.id
+        )
     )
+def booking_keyboard(
+    booking_id
+):
+
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [
+                InlineKeyboardButton(
+                    text="✅ Подтвердить",
+                    callback_data=f"confirm:{booking_id}"
+                )
+            ],
+            [
+                InlineKeyboardButton(
+                    text="❌ Отклонить",
+                    callback_data=f"reject:{booking_id}"
+                )
+            ]
+        ]
+    )
+
+
