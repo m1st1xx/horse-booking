@@ -1,0 +1,80 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+    background:url("https://images.unsplash.com/photo-1517849845537-4d257902454a")
+        center center/cover no-repeat;
+
+    min-height:100vh;
+}
+
+.overlay{
+    background:rgba(0,0,0,0.5);
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.booking-card{
+
+    width:420px;
+
+    background:white;
+
+    border-radius:15px;
+
+    padding:30px;
+
+    box-shadow:0 0 25px rgba(0,0,0,0.3);
+}
+
+.booking-card h1{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+input,
+select,
+button{
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+}
+
+button{
+
+    background:#2e7d32;
+
+    color:white;
+
+    border:none;
+
+    cursor:pointer;
+}
+
+button:hover{
+    opacity:.9;
+}
+
+#result{
+    margin-top:15px;
+    text-align:center;
+}
